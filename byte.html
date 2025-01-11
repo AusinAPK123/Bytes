@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    body {
+      display: fixed;
+      background-color: #513c90;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .button {
+      height: 100px;
+      width: 100px;
+      margin: 10px 41px 0;
+      background-color: transparent;
+      color: rgba(248,201,201,0.90);
+      border: 3px dashed;
+      border-color: rgba(154,213,241,0.5);
+      border-radius: 20px;
+      font-size: 20px;
+    }
+    #numberDisplay {
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.25);
+      color: white;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 300px;
+      font-size: 25px;
+      border-radius: 10px;
+      margin: 35px;
+      border: dashed rgba(189,255,206,0.90);
+    }
+    #inputNumbers {
+      background-color: transparent;
+      height: 30px;
+      margin-left: 30px;
+      width: 300px;
+      border-radius: 10px;
+      border: 2px dashed;
+      border-color: rgba(189,171,241,0.5);
+    }
+  </style>
+  <title>Data</title>
+</head>
+<body>
+  <input type="text" id="inputNumbers" placeholder="Data">
+<div id="numberDisplay">####</div>
+<button class="button" id="prevButton">&lt;</button>
+<button class="button" id="nextButton">&gt;</button>
+<script>
+  const inputNumbers = document.getElementById('inputNumbers');
+const numberDisplay = document.getElementById('numberDisplay');
+const nextButton = document.getElementById('nextButton');
+const prevButton = document.getElementById('prevButton');
+
+let numberPairs = [];
+let currentIndex = 0;
+
+function updateDisplay() {
+  numberDisplay.textContent = numberPairs[currentIndex];
+}
+
+function processInput() {
+  const input = inputNumbers.value.trim();
+  numberPairs = input.match(/[A-Fa-f0-9]{2}\s[A-Fa-f0-9]{2}/g) || [];
+  currentIndex = 0;
+  updateDisplay();
+}
+
+nextButton.addEventListener('click', function() {
+  currentIndex = (currentIndex + 1) % numberPairs.length;
+  updateDisplay();
+});
+
+prevButton.addEventListener('click', function() {
+  currentIndex = (currentIndex - 1 + numberPairs.length) % numberPairs.length;
+  updateDisplay();
+});
+
+inputNumbers.addEventListener('input', processInput);
+</script>
+</body>
+</html>
