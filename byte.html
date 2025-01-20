@@ -52,7 +52,7 @@
 </head>
 <body>
   <input type="text" id="inputNumbers" placeholder="Data">
-<div id="numberDisplay">####</div>
+<div id="numberDisplay"></div>
 <button class="button" id="prevButton">&lt;</button>
 <button class="button" id="nextButton">&gt;</button>
 <script>
@@ -66,6 +66,17 @@ let currentIndex = 0;
 
 function updateDisplay() {
   numberDisplay.textContent = numberPairs[currentIndex];
+  
+  if (currentIndex === 0) {
+    prevButton.disabled = true;
+    nextButton.disabled = false;
+  } else if (currentIndex === numberPairs.length - 1) {
+    nextButton.disabled = true;
+    prevButton.disabled = false;
+  } else {
+    prevButton.disabled = false;
+    nextButton.disabled = false;
+  }
 }
 
 function processInput() {
@@ -76,13 +87,17 @@ function processInput() {
 }
 
 nextButton.addEventListener('click', function() {
-  currentIndex = (currentIndex + 1) % numberPairs.length;
-  updateDisplay();
+  if (currentIndex < numberPairs.length - 1) {
+    currentIndex++;
+    updateDisplay();
+  }
 });
 
 prevButton.addEventListener('click', function() {
-  currentIndex = (currentIndex - 1 + numberPairs.length) % numberPairs.length;
-  updateDisplay();
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateDisplay();
+  }
 });
 
 inputNumbers.addEventListener('input', processInput);
