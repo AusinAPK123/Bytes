@@ -15,10 +15,18 @@
     }
 
     @font-face {
-    font-family: 'fontmc'; /* Tên mà bạn đặt cho font */
-    src: url('fontmc.ttf'); /* Đường dẫn tới file .ttf */
-    font-weight: normal; /* Hoặc bold nếu đây là font chữ đậm */
-    font-style: normal; /* Hoặc italic nếu đây là font chữ nghiêng */
+      font-family: 'fontmc'; /* Tên mà bạn đặt cho font */
+      src: url('fontmc.ttf'); /* Đường dẫn tới file .ttf */
+      font-weight: normal; /* Hoặc bold nếu đây là font chữ đậm */
+      font-style: normal; /* Hoặc italic nếu đây là font chữ nghiêng */
+    }
+
+    /* Chỉnh font cho placeholder */
+    ::placeholder {
+      font-family: 'fontmc', sans-serif; /* Chọn font mong muốn */
+      font-size: 14px; /* Chọn kích thước font */
+      font-style: italic; /* Chọn kiểu chữ (nếu cần) */
+      color: #999;
     }
     
     .button {
