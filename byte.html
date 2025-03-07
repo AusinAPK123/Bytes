@@ -71,6 +71,15 @@
 <div id="numberDisplay"></div>
 <button class="button" id="prevButton">&lt;</button>
 <button class="button" id="nextButton">&gt;</button>
+<select id="fontSelect" onchange="changeFont()">
+    <option value="Arial">Arial</option>
+    <option value="'fontmc', sans-serif">Custom Font 1</option>
+    <option value="'fontmc1', sans-serif">Custom Font 2</option>
+    <option value="'fontmc2', sans-serif">Custom Font 3</option>
+    <option value="'fontmc3', sans-serif">Custom Font 4</option>
+    <option value="'fontmc4', sans-serif">Custom Font 5</option>
+    <!-- Thêm các font khác vào đây -->
+</select>
 <script>
   const inputNumbers = document.getElementById('inputNumbers');
 const numberDisplay = document.getElementById('numberDisplay');
@@ -117,6 +126,12 @@ prevButton.addEventListener('click', function() {
 });
 
 inputNumbers.addEventListener('input', processInput);
+
+function changeFont() {
+    const fontSelect = document.getElementById('fontSelect');
+    const selectedFont = fontSelect.options[fontSelect.selectedIndex].value;
+    document.querySelector('p').style.fontFamily = selectedFont;
+}
 </script>
 </body>
 </html>
