@@ -7,42 +7,151 @@
   <style>
     body {
       display: fixed;
-      font-family: 'fontmc', sans-serif;
-      background-color: #513c90;
-      align-items: center;
-      justify-content: center;
-      
+      font-family: 'MinecraftBold', sans-serif;
+      background-image: url('/nen1.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+     /* align-items: center;
+      justify-content: center;*/
     }
 
     @font-face {
-      font-family: 'fontmc'; /* Tên mà bạn đặt cho font */
-      src: url('fontmc.ttf'); /* Đường dẫn tới file .ttf */
-      font-weight: normal; /* Hoặc bold nếu đây là font chữ đậm */
-      font-style: normal; /* Hoặc italic nếu đây là font chữ nghiêng */
+      font-family: 'MinecraftBold';
+      src: url('MinecraftBold.otf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'GlitchGoblin';
+      src: url('GlitchGoblin.ttf');
+      font-weight: normal;
+      font-style: normal;
     }
 
-    /* Chỉnh font cho placeholder */
+    @font-face {
+      font-family: 'MinecraftRegular';
+      src: url('MinecraftRegular.otf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'RoughSerif';
+      src: url('RoughSerif.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Saturdate';
+      src: url('Saturdate.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'SchoolBackpack';
+      src: url('SchoolBackpack.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Timeburner';
+      src: url('Timeburner.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TimeburnerBold';
+      src: url('TimeburnerBold.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'KalniaGlaze';
+      src: url('KalniaGlaze.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Honk';
+      src: url('Honk.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Maus';
+      src: url('Maus.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Rigolo';
+      src: url('Rigolo.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Jerseyletters';
+      src: url('Jerseyletters.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Aerologica';
+      src: url('Aerologica.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Poxast';
+      src: url('Poxast.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'WhosLife';
+      src: url('WhosLife.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
     ::placeholder {
-      font-family: 'fontmc', sans-serif; /* Chọn font mong muốn */
-      font-size: 14px; /* Chọn kích thước font */
-      font-style: italic; /* Chọn kiểu chữ (nếu cần) */
-      color: #999;
+      font-family: 'MinecraftBold', sans-serif;
+      font-size: 10px;
+      font-style: normal;
+      color: #fff;
     }
     
     .button {
       height: 100px;
       width: 100px;
-      margin: 10px 41px 0;
-      background-color: transparent;
-      color: rgba(248,201,201,0.90);
+      margin: 30px 41px 0;
+      background-color: rgba(168,127,248,0.723);
+      color: white;
       border: 3px dashed;
-      border-color: rgba(154,213,241,0.5);
+      border-color: rgba(189,255,206,0.90);
       border-radius: 20px;
       font-size: 20px;
     }
+    
+    .button-disabled {
+    border-color: red !important;
+}
+    
     #numberDisplay {
       display: flex;
-      background-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(168,127,248,0.723);
       color: white;
       text-align: center;
       justify-content: center;
@@ -54,14 +163,29 @@
       margin: 35px;
       border: dashed rgba(189,255,206,0.90);
     }
+    
     #inputNumbers {
-      background-color: transparent;
+      font-family: 'MinecraftBold', sans-serif;
+      background-color: rgba(168,127,248,0.723);
       height: 30px;
-      margin-left: 30px;
+      margin: 30px;
       width: 300px;
       border-radius: 10px;
       border: 2px dashed;
-      border-color: rgba(189,171,241,0.5);
+      border-color: rgba(189,255,206,0.90);
+      color: white;
+    }
+
+    #fontSelect {
+      width: 250px;
+      height: 30px;
+      margin: 30px auto 30px;
+      display: block;
+      border-radius: 20px;
+      border: 2px dashed rgba(189,255,206,0.90);
+      outline: none;
+      background-color: rgba(168,127,248,0.723);
+      color: white;
     }
   </style>
   <title>Data</title>
@@ -69,17 +193,29 @@
 <body>
   <input type="text" id="inputNumbers" placeholder="Data">
 <div id="numberDisplay"></div>
-<button class="button" id="prevButton">&lt;</button>
-<button class="button" id="nextButton">&gt;</button>
 <select id="fontSelect" onchange="changeFont()">
-    <option value="Arial">Arial</option>
-    <option value="'fontmc', sans-serif">Custom Font 1</option>
-    <option value="'fontmc1', sans-serif">Custom Font 2</option>
-    <option value="'fontmc2', sans-serif">Custom Font 3</option>
-    <option value="'fontmc3', sans-serif">Custom Font 4</option>
-    <option value="'fontmc4', sans-serif">Custom Font 5</option>
+    <option value="MinecraftBold" style="font-family: 'MinecraftBold', sans-serif;">Minecraft Bold</option>
+    <option value="'GlitchGoblin', sans-serif" style="font-family: 'GlitchGoblin'; sans-serif">Glitch Goblin</option>
+    <option value="'MinecraftRegular', sans-serif">Minecraft Regular</option>
+    <option value="'RoughSerif', sans-serif">Rough Serif</option>
+    <option value="'Saturdate', sans-serif">Saturdate</option>
+    <option value="'SchoolBackpack', sans-serif">School Backpack</option>
+    <option value="'Timeburner', sans-serif">Time burner</option>
+    <option value="'Honk', sans-serif">Honk</option>
+    <option value="'TimeburnerBold', sans-serif">Time burner Bold</option>
+    <option value="'KalniaGlaze', sans-serif">Kalnia Glaze Bold</option>
+    <option value="'Maus', sans-serif">Maus</option>
+    <option value="'Rigolo', sans-serif">Rigolo</option>
+    <option value="'Jerseyletters', sans-serif">Jersey letters</option>
+    <option value="'Aerologica', sans-serif">Aerologica</option>
+    <option value="'Poxast', sans-serif">Poxast</option>
+    <option value="'WhosLife', sans-serif">WhosLife</option>
     <!-- Thêm các font khác vào đây -->
 </select>
+<div style="display: flex;">
+<button class="button" id="prevButton">&lt;</button>
+<button class="button" id="nextButton">&gt;</button>
+</div>
 <script>
   const inputNumbers = document.getElementById('inputNumbers');
 const numberDisplay = document.getElementById('numberDisplay');
@@ -128,9 +264,39 @@ prevButton.addEventListener('click', function() {
 inputNumbers.addEventListener('input', processInput);
 
 function changeFont() {
+  
     const fontSelect = document.getElementById('fontSelect');
+    
     const selectedFont = fontSelect.options[fontSelect.selectedIndex].value;
-    document.querySelector('p').style.fontFamily = selectedFont;
+    
+    numberDisplay.style.fontFamily = selectedFont;
+    
+    document.getElementById('inputNumbers').style.fontFamily = selectedFont;
+    
+    const inputPlaceholder = document.getElementById('inputNumbers').getAttribute('placeholder');
+    
+    document.getElementById('inputNumbers').setAttribute('placeholder', inputPlaceholder);
+}
+
+function updateDisplay() {
+    numberDisplay.textContent = numberPairs[currentIndex];
+    
+    if (currentIndex === 0) {
+        prevButton.disabled = true;
+        prevButton.classList.add('button-disabled');
+        nextButton.disabled = false;
+        nextButton.classList.remove('button-disabled');
+    } else if (currentIndex === numberPairs.length - 1) {
+        nextButton.disabled = true;
+        nextButton.classList.add('button-disabled');
+        prevButton.disabled = false;
+        prevButton.classList.remove('button-disabled');
+    } else {
+        prevButton.disabled = false;
+        prevButton.classList.remove('button-disabled');
+        nextButton.disabled = false;
+        nextButton.classList.remove('button-disabled');
+    }
 }
 </script>
 </body>
